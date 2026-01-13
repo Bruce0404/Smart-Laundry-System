@@ -1,0 +1,15 @@
+graph LR
+    subgraph 洗衣店 (The Shop)
+        A[iPhone 17 Pro] -->|拍攝 & 編碼 (H.265)| B(Wi-Fi 6 / 5G)
+        D[收銀台電腦] <-->|顯示結果 & 確認| B
+    end
+    
+    B <===>|網際網路 (Tailscale VPN 內網穿透)| C(家中光纖網路)
+    
+    subgraph 家中工作室 (Home Lab)
+        C --> E[高效能主機 (GPU Server)]
+        E -->|AI 推論 (YOLOv8)| E
+    end
+
+    style A fill:#ff9999,stroke:#333,stroke-width:2px
+    style E fill:#99ccff,stroke:#333,stroke-width:2px
